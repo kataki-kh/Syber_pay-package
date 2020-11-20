@@ -1,0 +1,19 @@
+{
+    "name": "kataki/syber-pay",
+    "description": "This packege is simple way to integrate syber pay online payment sulotion on your larval api\u001b[D\u001b[D\u001b[D\u001b[D\u001b[e\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kataki",
+            "email": "kataki.kh2017@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Kataki\\Syber_pay\\": "src/"
+        }
+    }
+}
