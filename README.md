@@ -37,9 +37,11 @@ cancel_message="payment canceled"
 ##That will automaticlly generate the needed api that syber company would require :
 
 #(post)example.com/api/transactions/syber/payment #trigerd by the mobile div and require parameter (order_id)
-#(post)example.com/api/transactions/syber/notify #trigerd by syber company
+#(post)example.com/api/transactions/syber/notify #trigerd by syber company and will check if the payment proccess done and update you
 #(post)example.com/api/transactions/syber/return #trigerd by syber company
-#(post)example.com/api/transactionssyber/cancel  #trigerd by syber company
+and will retrun animation redirect page show message and the payment status
+
+#(post)example.com/api/transactionssyber/cancel  #trigerd by syber company will retrun animation redirect page show message and the payment is canceled
 
 ##it also generate payment model and table:
 		payment:
