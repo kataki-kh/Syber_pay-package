@@ -10,3 +10,4 @@
 ## This Package Will Help You Integrate Syper Pay Payment Gateway In Your Laravel Api To Support Payment On Mobile Applications
 
 ##Installation:
+ run composer require kataki/syber-pay
