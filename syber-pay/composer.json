@@ -1,6 +1,6 @@
 {
     "name": "kataki/syber-pay",
-    "description": "This packege is simple way to integrate syber pay online payment sulotion on your larval api\u001b[D\u001b[D\u001b[D\u001b[D\u001b[e\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D",
+    "description": "This package is simple way to integrate syber pay online payment sulotion on your laravel api\u001b[D\u001b[D\u001b[D\u001b[D\u001b[e\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -14,6 +14,13 @@
     "autoload": {
         "psr-4": {
             "Kataki\\Syber_pay\\": "src/"
+        },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kataki\\Syber_pay\\SyberServiceProvider"
+            ]
         }
+    }
     }
 }
