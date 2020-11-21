@@ -9,9 +9,12 @@
 
 ## This Package Will Help You Integrate Syber Pay Payment Gateway In Your Laravel Api To Support Payment On Mobile Applications
 
-#Installation :
- 	#run composer require kataki/syber-pay
-#open the .env file and add these lines :
+### Installation :
+```sh
+ 	$ run composer require kataki/syber-pay
+```
+### open the .env file and add these lines :
+```sh
 syberpayURL="https://syberpay.test.sybertechnology.com/syberpay/"
 applicationId="0000000132"
 serviceId="009001000106"
@@ -26,17 +29,17 @@ success_message="payment done"
 error_message="payment error"
 cancel_message="payment canceled"
 
-
+```
 
 
 
 ##That will automaticlly generate the needed api that syber company would require :
 
-	#(post)example.com/api/transactions/syber/payment #trigerd by the mobile div and require parameter (order_id)
-	#(post)example.com/api/transactions/syber/notify #trigerd by syber company and will check if the payment proccess done and update you
-	#(post)example.com/api/transactions/syber/return #trigerd by syber company and will retrun animation redirect page show message and the payment status
+	(post)example.com/api/transactions/syber/payment #trigerd by the mobile div and require parameter (order_id)
+	(post)example.com/api/transactions/syber/notify #trigerd by syber company and will check if the payment proccess done and update you
+	(post)example.com/api/transactions/syber/return #trigerd by syber company and will retrun animation redirect page show message and the payment status
 
-	#(post)example.com/api/transactionssyber/cancel  #trigerd by syber company will retrun animation redirect page show message and the payment is canceled
+	(post)example.com/api/transactionssyber/cancel  #trigerd by syber company will retrun animation redirect page show message and the payment is canceled
 
 ##it also generate payment model and table:
 		payment:
@@ -49,3 +52,8 @@ cancel_message="payment canceled"
          string('note')->nullable,
          string('payment_method'),/// syber  integer('status'),///0=notvalid or pendding, 1=done
 		string('type')->default('1'),///1=order payment
+
+License
+----
+
+MIT		
