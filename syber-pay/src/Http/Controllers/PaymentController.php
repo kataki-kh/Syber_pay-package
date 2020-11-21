@@ -210,13 +210,29 @@ class PaymentController extends Controller
             if ($Payment->status == 1) {
                 $response = APIHelpers::creatAPIResponse(false, '200', 'payment done please go back', null);
                 ///change the returned view
-                return  $response;
-                return view('payment::payment.success');
+                 $url=  url('')."/vendor/syber-pay/9912-payment-success.mp4";
+                $message=env('success_message');
+                return view('syber-pay::success',[
+            'url'=>$url,
+            'message'=>$message,
+
+
+        ]);
+               /// return  $response;
+               /// return view('payment::payment.success');
             } else {
                 $response = APIHelpers::creatAPIResponse(true, '400', 'payment error please try again', null);
                 ///change the returned view
-                return  $response;
-                return view('payment::payment.failed');
+                $url=  url('')."/vendor/syber-pay/9912-payment-success.mp4";
+                $message=env('error_message');
+                return view('syber-pay::cancel',[
+            'url'=>$url,
+            'message'=>$message,
+
+
+        ]);
+               // return  $response;
+               // return view('payment::payment.failed');
             }
         }
 
@@ -225,7 +241,15 @@ class PaymentController extends Controller
 ///cancel function
     public function cancel(Request $request)
     {
-        return "this operation is canceld please go back";
+        $url=  url('')."/vendor/syber-pay/9912-payment-success.mp4";
+        $message=env('cancel_message');
+        
+        return view('syber-pay::cancel',[
+            'url'=>$url,
+            'message'=>$message,
+
+
+        ]);
 
 
     }
