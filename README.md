@@ -42,17 +42,17 @@ cancel_message="payment canceled"
 	(post)example.com/api/transactionssyber/cancel  #trigerd by syber company will retrun animation redirect page show message and the payment is canceled
 
 ###it also generate payment model and table :
-		payment table(
+		
+	payment table(
 		bigInteger('id')->unique(),
          string('transaction_id')->unique(),
          bigInteger('order_id'),
-            
          integer('customer_id'),
          string('hash'),
          string('note')->nullable,
          string('payment_method'),/// syber  integer('status'),///0=notvalid or pendding, 1=done
 		string('type')->default('1'),///1=order payment
-		)
+	)
 
 License :
 ----
