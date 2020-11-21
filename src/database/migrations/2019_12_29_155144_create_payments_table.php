@@ -18,7 +18,7 @@ class CreatePaymentsTable extends Migration
             $table->string('transaction_id')->unique();
             $table->bigInteger('order_id')->nullable()->references('id')->on('orders');
 
-        //$table->string('operation_id')->unique();///the operation id
+        ///$table->string('operation_id')->unique();///the operation id
             $table->double('amount');
             
             $table->integer('customer_id')->nullable()->references('id')->on('customers');
