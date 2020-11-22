@@ -11,7 +11,7 @@
 
 ### Installation :
 ```sh
- 	$ ] composer require kataki/syber-pay
+ 	$  composer require kataki/syber-pay
 ```
 ### open the .env file and add these lines :
 ```sh
@@ -41,6 +41,15 @@ cancel_message="payment canceled"
 
 	(post)example.com/api/transactionssyber/cancel  #trigerd by syber company will retrun animation redirect page show message and the payment is canceled
 
+##Example Request :
+```sh
+post::example.com/api/transactions/syber/payment?order_id=1
+```
+
+##Example response :
+```sh
+https://syberpay.test.sybertechnology.com:443/syberpay/payment/1917b617-8659-414e-a751-a5cc42078b47
+```
 ###it also generate payment model and table :
 		
 	payment table(
