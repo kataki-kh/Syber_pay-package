@@ -10,25 +10,21 @@ use Illuminate\Support\Facades\DB;
 //use App\env('order_model');
 class PaymentController extends Controller
 {
-    //private $syberpayURL = env('syberpayURL');
-    //private $applicationId = env('applicationId');
-    ///private $serviceId = env('serviceId');
-    ///private $salt = env('salt');
-    //private $key = env('key');
+   
     public function SyberPay(Request $request)
     {
-        //return env('syberpayURL');
+        
         $headers = array( 'Content-Type: application/json');
-        $order_model=env('order_model');
-        $order_price_column=env('order_price_column');
-        $customer_name_column=env('customer_name_column');
-        $order_payment_status_column=env('order_payment_status_column');
-        $syberpayURL = env('syberpayURL') . 'getUrl';
+        $order_model=config('Syber_pay.order_model');
+        $order_price_column=config('Syber_pay.order_price_column');
+        $customer_name_column=config('Syber_pay.customer_name_column');
+        $order_payment_status_column=config('Syber_pay.order_payment_status_column');
+        $syberpayURL = config('Syber_pay.syberpayURL') . 'getUrl';
 
-        $applicationId = env('applicationId');
-        $serviceId = env('serviceId');
-        $key = env('key');
-        $salt= env('salt');
+        $applicationId = config('Syber_pay.applicationId');
+        $serviceId = config('Syber_pay.serviceId');
+        $key = config('Syber_pay.key');
+        $salt= config('Syber_pay.salt');
 //return $syberpayURL;
         $currencyDesc = 'SDG';
         // $orderId = mt_rand(1,10000);
@@ -132,16 +128,22 @@ class PaymentController extends Controller
 
 
         $headers = array( 'Content-Type: application/json');
-        $order_model=env('order_model');
-        $order_price_column=env('order_price_column');
-        $customer_name_column=env('customer_name_column');
-        $order_payment_status_column=env('order_payment_status_column');
-        $syberpayURL = env('syberpayURL') . 'getUrl';
+        $order_model=config('Syber_pay.order_model');
+        $order_price_column=config('Syber_pay.order_price_column');
+        $customer_name_column=config('Syber_pay.customer_name_column');
+        $order_payment_status_column=config('Syber_pay.order_payment_status_column');
+        $syberpayURL = config('Syber_pay.syberpayURL') . 'getUrl';
 
-        $applicationId = env('applicationId');
-        $serviceId = env('serviceId');
-        $key = env('key');
-        $salt= env('salt');
+        $applicationId = config('Syber_pay.applicationId');
+        $serviceId = config('Syber_pay.serviceId');
+        $key = config('Syber_pay.key');
+        $salt= config('Syber_pay.salt');
+        
+
+        
+        
+        
+        
         if ($request->transactionId) {
             $transactionId = $request->transactionId;
 
@@ -211,7 +213,7 @@ class PaymentController extends Controller
                 $response = APIHelpers::creatAPIResponse(false, '200', 'payment done please go back', null);
                 ///change the returned view
                  $url=  url('')."/vendor/syber-pay/9912-payment-success.mp4";
-                $message=env('success_message');
+                $message=config('Syber_pay.success_message');
                 return view('syber-pay::success',[
             'url'=>$url,
             'message'=>$message,
@@ -224,7 +226,7 @@ class PaymentController extends Controller
                 $response = APIHelpers::creatAPIResponse(true, '400', 'payment error please try again', null);
                 ///change the returned view
                 $url=  url('')."/vendor/syber-pay/9912-payment-success.mp4";
-                $message=env('error_message');
+                $message=config('Syber_pay.error_message');
                 return view('syber-pay::cancel',[
             'url'=>$url,
             'message'=>$message,
@@ -242,7 +244,7 @@ class PaymentController extends Controller
     public function cancel(Request $request)
     {
         $url=  url('')."/vendor/syber-pay/9912-payment-success.mp4";
-        $message=env('cancel_message');
+        $message=config('Syber_pay.cancel_message');
         
         return view('syber-pay::cancel',[
             'url'=>$url,

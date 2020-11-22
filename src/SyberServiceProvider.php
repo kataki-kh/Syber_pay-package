@@ -14,6 +14,7 @@ class SyberServiceProvider extends ServiceProvider
 			$this->loadMigrationsFrom(__DIR__.'/database/migrations');
 			$this->publishes([
         __DIR__.'/resources' => public_path('vendor/syber-pay'),
+         __DIR__.'/config/Syber_pay.php' => config_path('Syber_pay.php'),
     ], 'public');
 
 
