@@ -214,7 +214,8 @@ class PaymentController extends Controller
                 ///change the returned view
                  $url=  url('')."/vendor/syber-pay/9912-payment-success.mp4";
                 $message=config('Syber_pay.success_message');
-                return view('syber-pay::success',[
+                $view=config('Syber_pay.success_view');
+                return view($view,[
             'url'=>$url,
             'message'=>$message,
 
@@ -227,7 +228,8 @@ class PaymentController extends Controller
                 ///change the returned view
                 $url=  url('')."/vendor/syber-pay/9913-payment-failed.mp4";
                 $message=config('Syber_pay.error_message');
-                return view('syber-pay::cancel',[
+                $view=config('Syber_pay.error_view');
+                return view($view,[
             'url'=>$url,
             'message'=>$message,
 
@@ -245,8 +247,8 @@ class PaymentController extends Controller
     {
         $url=  url('')."/vendor/syber-pay/9913-payment-failed.mp4";
         $message=config('Syber_pay.cancel_message');
-        
-        return view('syber-pay::cancel',[
+        $view=config('Syber_pay.cancel_view');
+        return view($view,[
             'url'=>$url,
             'message'=>$message,
 

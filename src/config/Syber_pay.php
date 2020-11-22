@@ -15,6 +15,9 @@ return[
 'success_message'=>env('success_message'),
 'error_message'=>env('error_message'),
 'cancel_message'=>env('cancel_message'),
+'success_view'=>env('success_view'),
+'error_view'=>env('error_view'),
+'cancel_view'=>env('cancel_view'),
 
 
 
