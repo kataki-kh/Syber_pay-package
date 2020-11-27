@@ -28,6 +28,9 @@ customer_name_column="name"    //the column name on your appication customers ta
 success_message="payment done"
 error_message="payment error"
 cancel_message="payment canceled"
+success_view="syber-pay::success"
+error_view="syber-pay::cancel"
+cancel_view="syber-pay::cancel"
 
 ```
 
