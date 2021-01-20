@@ -33,16 +33,18 @@ error_view="syber-pay::cancel"
 cancel_view="syber-pay::cancel"
 
 ```
-
-
-
+##Test card
+```sh
+pan=7888450004340823
+pin=0000
+```
 ##That will automaticlly generate the needed api that syber company would require :
 
 	(post)example.com/api/transactions/syber/payment //trigerd by the mobile div and require parameter (order_id)
 	(post)example.com/api/transactions/syber/notify //trigerd by syber company and will check if the payment proccess done and update you
 	(post)example.com/api/transactions/syber/return //trigerd by syber company and will retrun animation redirect page show message and the payment status
 
-	(post)example.com/api/transactionssyber/cancel  #trigerd by syber company will retrun animation redirect page show message and the payment is canceled
+	(post)example.com/api/transactions/syber/cancel  #trigerd by syber company will retrun animation redirect page show message and the payment is canceled
 
 ##Example Request :
 ```sh
