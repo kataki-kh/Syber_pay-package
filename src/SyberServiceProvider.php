@@ -16,9 +16,7 @@ class SyberServiceProvider extends ServiceProvider
         __DIR__.'/resources' => public_path('vendor/syber-pay'),
          __DIR__.'/config/Syber_pay.php' => config_path('Syber_pay.php'),
     ], 'public');
-	$this->mergeConfigFrom(
-        __DIR__.'/config/Syber_pay.php', 'syber-pay'
-    );
+	
 
 
 
@@ -27,7 +25,9 @@ class SyberServiceProvider extends ServiceProvider
 
 ///register 
 	public function register(){
-
+$this->mergeConfigFrom(
+        __DIR__.'/config/Syber_pay.php', 'syber-pay'
+    );
 		
 	}	
 
