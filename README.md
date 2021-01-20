@@ -12,6 +12,7 @@
 ### Installation :
 ```sh
  	$  composer require kataki/syber-pay
+ 	$  php artisan Syber_pay:install
 ```
 ### open the .env file and add these lines :
 ```sh
